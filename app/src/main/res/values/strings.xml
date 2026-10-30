@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Nama aplikasi & teks UI (Bahasa Indonesia) -->
-    <string name="app_name">Neumorphic Launcher</string>
-    <string name="settings_title">Pengaturan</string>
+    <!-- ============ App Identity ============ -->
+    <string name="app_name">Neumorphic Pro</string>
+    <string name="settings_title">Pengaturan Pro</string>
 
     <!-- Search & hints -->
-    <string name="search_hint">Cari aplikasi…</string>
+    <string name="search_hint">Cari aplikasi, kontak, web…</string>
     <string name="app_drawer">Daftar Aplikasi</string>
-    <string name="no_apps_found">Tidak ada aplikasi yang cocok</string>
+    <string name="no_apps_found">Tidak ada hasil</string>
 
     <!-- Buttons -->
     <string name="save">Simpan</string>
     <string name="back">Kembali</string>
     <string name="close">Tutup</string>
+    <string name="cancel">Batal</string>
+    <string name="confirm">Konfirmasi</string>
+    <string name="enable">Aktifkan</string>
+    <string name="disable">Nonaktifkan</string>
 
     <!-- Settings -->
     <string name="settings_theme_mode">Mode Tema</string>
@@ -23,15 +27,138 @@
     <string name="settings_accent_color">Warna Aksen</string>
     <string name="settings_background_color">Warna Latar Belakang</string>
     <string name="settings_background_color_hint">Pilih warna latar yang akan digunakan di seluruh launcher</string>
-
     <string name="settings_corner_radius">Radius Sudut Kartu</string>
     <string name="settings_shadow_intensity">Intensitas Bayangan</string>
 
+    <!-- ============ v2.0.0 PRO FEATURES ============ -->
+
+    <!-- Smart Folder -->
+    <string name="smart_folder_games">Game</string>
+    <string name="smart_folder_social">Sosial</string>
+    <string name="smart_folder_tools">Alat</string>
+    <string name="smart_folder_media">Media</string>
+    <string name="smart_folder_finance">Keuangan</string>
+    <string name="smart_folder_shopping">Belanja</string>
+    <string name="smart_folder_productivity">Produktivitas</string>
+    <string name="smart_folder_other">Lainnya</string>
+
+    <!-- Universal Search -->
+    <string name="search_section_apps">Aplikasi</string>
+    <string name="search_section_contacts">Kontak</string>
+    <string name="search_section_settings">Pengaturan</string>
+    <string name="search_section_web">Cari di web</string>
+    <string name="search_section_shortcuts">Pintasan</string>
+
+    <!-- Categorized Drawer -->
+    <string name="drawer_tab_all">Semua</string>
+    <string name="drawer_tab_downloaded">Unduhan</string>
+    <string name="drawer_tab_games">Game</string>
+    <string name="drawer_tab_system">Sistem</string>
+    <string name="drawer_tab_hidden">Tersembunyi</string>
+    <string name="sort_by_name">Nama</string>
+    <string name="sort_by_usage">Penggunaan</string>
+    <string name="sort_by_install">Tanggal Install</string>
+
+    <!-- Notification Badge -->
+    <string name="notification_listener_label">Neumorphic Pro Notification</string>
+    <string name="notif_badge_enabled">Ikon menampilkan badge notifikasi</string>
+    <string name="notif_badge_disabled">Badge notifikasi nonaktif</string>
+    <string name="enable_notif_access">Aktifkan Akses Notifikasi</string>
+    <string name="notif_access_required">Akses notifikasi diperlukan untuk menampilkan badge</string>
+
+    <!-- Smart Suggestions -->
+    <string name="smart_suggestions">Saran Pintar</string>
+    <string name="suggestion_frequent">Sering Dipakai</string>
+    <string name="suggestion_predictive">Diperkirakan</string>
+
+    <!-- Custom Gestures -->
+    <string name="gesture_settings_title">Pengaturan Gesture</string>
+    <string name="gesture_double_tap">Double Tap</string>
+    <string name="gesture_double_tap_desc">Tidurkan layar (lock)</string>
+    <string name="gesture_swipe_down">Swipe Down</string>
+    <string name="gesture_swipe_down_desc">Buka panel notifikasi</string>
+    <string name="gesture_swipe_up">Swipe Up</string>
+    <string name="gesture_swipe_up_desc">Buka App Drawer</string>
+    <string name="gesture_long_press">Long Press</string>
+    <string name="gesture_long_press_desc">Buka Pengaturan</string>
+    <string name="gesture_shake">Goyang</string>
+    <string name="gesture_shake_desc">Nyalakan senter</string>
+    <string name="gesture_draw_letter">Gambar Huruf</string>
+    <string name="gesture_draw_letter_desc">Buka aplikasi tertentu</string>
+
+    <!-- At-a-Glance -->
+    <string name="ataglance_no_event">Tidak ada agenda</string>
+    <string name="ataglance_weather_loading">Memuat cuaca…</string>
+    <string name="ataglance_weather_unavailable">Cuaca tidak tersedia</string>
+
+    <!-- Icon Pack Support -->
+    <string name="icon_pack_picker_title">Pilih Icon Pack</string>
+    <string name="icon_pack_default">Default (Bawaan)</string>
+    <string name="icon_pack_none">Tidak ada</string>
+    <string name="icon_pack_installed">Icon Pack Terpasang</string>
+
+    <!-- Hide/Lock Apps -->
+    <string name="hide_apps_title">Sembunyikan / Kunci Aplikasi</string>
+    <string name="hide_apps_section_hide">Sembunyikan dari Drawer</string>
+    <string name="hide_apps_section_lock">Kunci dengan Biometrik</string>
+    <string name="app_lock_title">Otentikasi Diperlukan</string>
+    <string name="app_lock_subtitle">Verifikasi untuk membuka %1$s</string>
+    <string name="app_lock_failed">Otentikasi gagal. Coba lagi.</string>
+    <string name="app_lock_use_pin">Gunakan PIN</string>
+
+    <!-- Widget Support -->
+    <string name="widget_picker_title">Pilih Widget</string>
+    <string name="widget_add">Tambah Widget</string>
+    <string name="widget_remove">Hapus Widget</string>
+    <string name="widget_resize">Ubah Ukuran</string>
+    <string name="no_widgets_available">Tidak ada widget tersedia</string>
+
     <!-- Toast messages -->
-    <string name="toast_added_to_dock">ditambahkan ke dock</string>
-    <string name="toast_already_in_dock">sudah ada di dock</string>
-    <string name="toast_app_not_found">Aplikasi tidak ditemukan</string>
+    <string name="toast_added_to_dock">Ditambahkan ke dock</string>
+    <string name="toast_already_in_dock">Sudah ada di dock</string>
     <string name="toast_cannot_open">Tidak dapat membuka</string>
-    <string name="toast_clock_app_not_found">Aplikasi jam tidak ditemukan</string>
-    <string name="toast_theme_saved">Tema disimpan. Restart launcher untuk melihat perubahan.</string>
+    <string name="toast_theme_saved">Tema disimpan</string>
+    <string name="toast_app_hidden">Aplikasi disembunyikan</string>
+    <string name="toast_app_locked">Aplikasi dikunci</string>
+    <string name="toast_torch_on">Senter menyala</string>
+    <string name="toast_torch_off">Senter mati</string>
+    <string name="toast_gesture_disabled">Gesture nonaktif</string>
+    <string name="toast_need_permission">Izin diperlukan: %1$s</string>
+    <string name="toast_icon_pack_applied">Icon pack diterapkan</string>
+    <string name="toast_widget_added">Widget ditambahkan</string>
+    <string name="toast_pin_set">PIN berhasil diatur</string>
+    <string name="toast_pin_mismatch">PIN tidak cocok</string>
+
+    <!-- Settings sections v2.0.0 -->
+    <string name="settings_section_appearance">Tampilan</string>
+    <string name="settings_section_features">Fitur Pro</string>
+    <string name="settings_section_gestures">Gesture</string>
+    <string name="settings_section_security">Keamanan &amp; Privasi</string>
+    <string name="settings_section_about">Tentang</string>
+
+    <string name="settings_smart_folder">Smart Folder Otomatis</string>
+    <string name="settings_notif_badge">Notification Badge</string>
+    <string name="settings_smart_suggestions">Saran Pintar</string>
+    <string name="settings_ataglance">At-a-Glance Widget</string>
+    <string name="settings_icon_pack">Icon Pack</string>
+    <string name="settings_hide_apps">Sembunyikan/Kunci App</string>
+    <string name="settings_widgets">Widget di Home</string>
+    <string name="settings_blur_effect">Efek Blur (Glassmorphism)</string>
+    <string name="settings_animations">Animasi Premium</string>
+
+    <string name="settings_blur_strength">Kekuatan Blur</string>
+    <string name="settings_animation_speed">Kecepatan Animasi</string>
+
+    <!-- About -->
+    <string name="about_version">Versi</string>
+    <string name="about_description">Launcher Android dengan gaya iOS Glassmorphism, dibangun dengan Kotlin &amp; Material Design 3.</string>
+    <string name="about_features">Fitur: Smart Folder, Universal Search, Widget Support, Notification Badge, Smart Suggestions, Custom Gestures, At-a-Glance, Icon Pack, Hide/Lock Apps, Categorized Drawer</string>
+
+    <!-- Permissions rationale -->
+    <string name="perm_rationale_usage">Akses penggunaan diperlukan untuk Saran Pintar (mempelajari pola penggunaan app)</string>
+    <string name="perm_rationale_contacts">Akses kontak diperlukan untuk mencari kontak di Universal Search</string>
+    <string name="perm_rationale_calendar">Akses kalender diperlukan untuk menampilkan agenda di At-a-Glance</string>
+    <string name="perm_rationale_location">Akses lokasi diperlukan untuk Saran Pintar berbasis lokasi</string>
+    <string name="perm_rationale_notif">Akses notifikasi diperlukan untuk menampilkan badge di ikon aplikasi</string>
+
 </resources>

@@ -2,14 +2,51 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Permission untuk membaca daftar aplikasi (Android 11+ / API 30+) -->
-    <!-- Query all packages permission for listing installed apps (API 30+) -->
+    <!-- ============ PERMISSIONS UNTUK v2.0.0 POWER FEATURES ============ -->
+
+    <!-- Query all packages (App Drawer, Universal Search) -->
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"
         tools:ignore="QueryAllPackagesPermission" />
 
-    <!-- Permission untuk expand notification shade (swipe down gesture) -->
+    <!-- Expand status bar (swipe down gesture) -->
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
 
+    <!-- Usage stats (Smart Suggestions berdasarkan pola penggunaan) -->
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- Read contacts (Universal Search) -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <!-- Calendar (At-a-Glance widget) -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+
+    <!-- Location (Smart Suggestions kontekstual) -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Internet (Universal Search web results, weather) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Vibrate (gesture feedback) -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Wake lock (double-tap to wake) -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Camera flash (shake to torch) -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+
+    <!-- Bind app widget (Widget Support di home screen) -->
+    <uses-permission android:name="android.permission.BIND_APPWIDGET"
+        tools:ignore="ProtectedPermissions" />
+
+    <!-- Use biometric (App Lock fingerprint) -->
+    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
+    <!-- ============ APPLICATION ============ -->
     <application
         android:name=".NeumorphicApp"
         android:allowBackup="true"
@@ -23,10 +60,7 @@
         android:hardwareAccelerated="true"
         android:theme="@style/Theme.NeumorphicLauncher">
 
-        <!--
-            Home Screen Activity — Main launcher screen
-            ACTION_MAIN + CATEGORY_HOME menjadikan activity sebagai default launcher
-        -->
+        <!-- Main Home Screen — Launcher entry -->
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|uiMode"
@@ -44,7 +78,7 @@
             </intent-filter>
         </activity>
 
-        <!-- App Drawer Activity — Daftar semua aplikasi terinstal -->
+        <!-- App Drawer (Categorized with tabs) -->
         <activity
             android:name=".AppDrawerActivity"
             android:exported="false"
@@ -52,13 +86,77 @@
             android:configChanges="orientation|screenSize|keyboardHidden|uiMode"
             android:windowSoftInputMode="adjustResize" />
 
-        <!-- Settings Activity — Pengaturan tema launcher -->
+        <!-- Settings Activity -->
         <activity
             android:name=".SettingsActivity"
             android:exported="false"
             android:label="@string/settings_title"
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.NeumorphicLauncher.Settings" />
+
+        <!-- App Lock Activity (fingerprint/PIN verify) -->
+        <activity
+            android:name=".pro.AppLockActivity"
+            android:exported="false"
+            android:theme="@style/Theme.NeumorphicLauncher.Lock"
+            android:excludeFromRecents="true"
+            android:taskAffinity="" />
+
+        <!-- Gesture Settings Activity -->
+        <activity
+            android:name=".pro.GestureSettingsActivity"
+            android:exported="false"
+            android:label="@string/gesture_settings_title"
+            android:parentActivityName=".SettingsActivity"
+            android:theme="@style/Theme.NeumorphicLauncher.Settings" />
+
+        <!-- Icon Pack Picker Activity -->
+        <activity
+            android:name=".pro.IconPackPickerActivity"
+            android:exported="false"
+            android:label="@string/icon_pack_picker_title"
+            android:parentActivityName=".SettingsActivity"
+            android:theme="@style/Theme.NeumorphicLauncher.Settings" />
+
+        <!-- Hide Apps Settings Activity -->
+        <activity
+            android:name=".pro.HideAppsActivity"
+            android:exported="false"
+            android:label="@string/hide_apps_title"
+            android:parentActivityName=".SettingsActivity"
+            android:theme="@style/Theme.NeumorphicLauncher.Settings" />
+
+        <!-- Widget Picker Activity (bind_appwidget) -->
+        <activity
+            android:name=".pro.WidgetPickerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.NeumorphicLauncher.Drawer" />
+
+        <!-- ============ SERVICES ============ -->
+
+        <!-- Notification Listener Service (Notification Badge) -->
+        <service
+            android:name=".pro.NotificationListenerService"
+            android:exported="false"
+            android:label="@string/notification_listener_label"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+        <!-- ============ PROVIDERS ============ -->
+
+        <!-- File provider for sharing icon pack files -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
 
     </application>
 

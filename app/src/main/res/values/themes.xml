@@ -36,6 +36,14 @@
         <item name="android:windowActionBar">false</item>
     </style>
 
+    <!-- Tema App Lock (fullscreen, no action bar) -->
+    <style name="Theme.NeumorphicLauncher.Lock" parent="Theme.NeumorphicLauncher">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
     <!-- Style teks judul section -->
     <style name="TextAppearance.SectionTitle" parent="TextAppearance.Material3.TitleMedium">
         <item name="android:textColor">@color/text_primary_neu</item>

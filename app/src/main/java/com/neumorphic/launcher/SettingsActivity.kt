@@ -1,5 +1,6 @@
 package com.neumorphic.launcher
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -58,9 +59,72 @@ class SettingsActivity : AppCompatActivity() {
         setupShadowIntensitySlider()
         setupSaveButton()
         setupBackButton()
+        setupProFeaturesSection()
 
         // Apply konfigurasi saat ini ke UI — Apply current config to UI
         applyCurrentConfigToUI()
+    }
+
+    /**
+     * Setup section Pro Features (v2.0.0).
+     * Setup Pro Features section (v2.0.0).
+     */
+    private fun setupProFeaturesSection() {
+        val proPrefs = getSharedPreferences("pro_features", MODE_PRIVATE)
+
+        // Smart Folder toggle
+        binding.smartFolderSwitch.isChecked = proPrefs.getBoolean("smart_folder", true)
+        binding.smartFolderSwitch.setOnCheckedChangeListener { _, isChecked ->
+            proPrefs.edit().putBoolean("smart_folder", isChecked).apply()
+        }
+
+        // Notification Badge toggle
+        binding.notifBadgeSwitch.isChecked = proPrefs.getBoolean("notif_badge", true)
+        binding.notifBadgeSwitch.setOnCheckedChangeListener { _, isChecked ->
+            proPrefs.edit().putBoolean("notif_badge", isChecked).apply()
+            if (isChecked) {
+                // Redirect ke notification access settings jika belum di-grant
+                val enabledListeners = android.provider.Settings.Secure.getString(
+                    contentResolver,
+                    "enabled_notification_listeners"
+                )
+                if (enabledListeners == null || !enabledListeners.contains(packageName)) {
+                    android.widget.Toast.makeText(
+                        this,
+                        getString(R.string.toast_need_permission, "Notification Access"),
+                        android.widget.Toast.LENGTH_LONG
+                    ).show()
+                    startActivity(Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"))
+                }
+            }
+        }
+
+        // Smart Suggestions toggle
+        binding.smartSuggestionsSwitch.isChecked = proPrefs.getBoolean("smart_suggestions", true)
+        binding.smartSuggestionsSwitch.setOnCheckedChangeListener { _, isChecked ->
+            proPrefs.edit().putBoolean("smart_suggestions", isChecked).apply()
+        }
+
+        // At-a-Glance toggle
+        binding.atAGlanceSwitch.isChecked = proPrefs.getBoolean("at_a_glance", true)
+        binding.atAGlanceSwitch.setOnCheckedChangeListener { _, isChecked ->
+            proPrefs.edit().putBoolean("at_a_glance", isChecked).apply()
+        }
+
+        // Gesture Settings row click
+        binding.gestureSettingsRow.setOnClickListener {
+            startActivity(Intent(this, com.neumorphic.launcher.pro.GestureSettingsActivity::class.java))
+        }
+
+        // Icon Pack picker row click
+        binding.iconPackRow.setOnClickListener {
+            startActivity(Intent(this, com.neumorphic.launcher.pro.IconPackPickerActivity::class.java))
+        }
+
+        // Hide/Lock Apps row click
+        binding.hideAppsRow.setOnClickListener {
+            startActivity(Intent(this, com.neumorphic.launcher.pro.HideAppsActivity::class.java))
+        }
     }
 
     /**

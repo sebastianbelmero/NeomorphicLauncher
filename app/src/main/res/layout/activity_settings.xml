@@ -337,6 +337,250 @@
 
         </LinearLayout>
 
+        <!-- ============ PRO FEATURES SECTION (v2.0.0) ============ -->
+        <TextView
+            android:id="@+id/proFeaturesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/settings_section_features"
+            android:textColor="@color/accent_neu"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginHorizontal="8dp"
+            app:layout_constraintTop_toBottomOf="@id/shadowIntensitySection"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Pro Features Section Container -->
+        <LinearLayout
+            android:id="@+id/proFeaturesSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_neumorphic_card"
+            android:padding="20dp"
+            android:layout_marginHorizontal="4dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintTop_toBottomOf="@id/proFeaturesTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Smart Folder Toggle -->
+            <LinearLayout
+                android:id="@+id/smartFolderRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingVertical="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/settings_smart_folder"
+                    android:textColor="@color/text_primary_neu"
+                    android:textSize="15sp" />
+
+                <Switch
+                    android:id="@+id/smartFolderSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:background="@color/divider_neu" />
+
+            <!-- Notification Badge Toggle -->
+            <LinearLayout
+                android:id="@+id/notifBadgeRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingVertical="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/settings_notif_badge"
+                    android:textColor="@color/text_primary_neu"
+                    android:textSize="15sp" />
+
+                <Switch
+                    android:id="@+id/notifBadgeSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:background="@color/divider_neu" />
+
+            <!-- Smart Suggestions Toggle -->
+            <LinearLayout
+                android:id="@+id/smartSuggestionsRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingVertical="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/settings_smart_suggestions"
+                    android:textColor="@color/text_primary_neu"
+                    android:textSize="15sp" />
+
+                <Switch
+                    android:id="@+id/smartSuggestionsSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:background="@color/divider_neu" />
+
+            <!-- At-a-Glance Toggle -->
+            <LinearLayout
+                android:id="@+id/atAGlanceRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingVertical="10dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/settings_ataglance"
+                    android:textColor="@color/text_primary_neu"
+                    android:textSize="15sp" />
+
+                <Switch
+                    android:id="@+id/atAGlanceSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:background="@color/divider_neu" />
+
+            <!-- Gesture Settings (click to open) -->
+            <LinearLayout
+                android:id="@+id/gestureSettingsRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingVertical="14dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/settings_section_gestures"
+                    android:textColor="@color/text_primary_neu"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_arrow_back"
+                    android:rotationY="180"
+                    app:tint="@color/text_secondary_neu" />
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:background="@color/divider_neu" />
+
+            <!-- Icon Pack Picker (click to open) -->
+            <LinearLayout
+                android:id="@+id/iconPackRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingVertical="14dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/settings_icon_pack"
+                    android:textColor="@color/text_primary_neu"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_arrow_back"
+                    android:rotationY="180"
+                    app:tint="@color/text_secondary_neu" />
+
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp"
+                android:background="@color/divider_neu" />
+
+            <!-- Hide/Lock Apps (click to open) -->
+            <LinearLayout
+                android:id="@+id/hideAppsRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:paddingVertical="14dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/settings_hide_apps"
+                    android:textColor="@color/text_primary_neu"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_arrow_back"
+                    android:rotationY="180"
+                    app:tint="@color/text_secondary_neu" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
         <!-- Save Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/saveButton"
@@ -349,7 +593,7 @@
             android:background="@drawable/bg_neumorphic_button_accent"
             app:backgroundTint="@null"
             android:layout_marginHorizontal="4dp"
-            app:layout_constraintTop_toBottomOf="@id/shadowIntensitySection"
+            app:layout_constraintTop_toBottomOf="@id/proFeaturesSection"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
