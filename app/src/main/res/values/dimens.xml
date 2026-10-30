@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dimensi umum untuk konsistensi visual -->
+
+    <!-- Padding & margin -->
+    <dimen name="spacing_xs">4dp</dimen>
+    <dimen name="spacing_sm">8dp</dimen>
+    <dimen name="spacing_md">16dp</dimen>
+    <dimen name="spacing_lg">24dp</dimen>
+    <dimen name="spacing_xl">32dp</dimen>
+
+    <!-- Card & container -->
+    <dimen name="card_corner_radius">24dp</dimen>
+    <dimen name="card_corner_radius_sm">16dp</dimen>
+    <dimen name="card_padding">20dp</dimen>
+
+    <!-- Ikon aplikasi -->
+    <dimen name="app_icon_size">56dp</dimen>
+    <dimen name="dock_icon_size">40dp</dimen>
+    <dimen name="dock_item_size">64dp</dimen>
+
+    <!-- Text sizes -->
+    <dimen name="text_clock_time">72sp</dimen>
+    <dimen name="text_clock_date">16sp</dimen>
+    <dimen name="text_app_label">12sp</dimen>
+    <dimen name="text_section_title">16sp</dimen>
+
+    <!-- Elevation -->
+    <dimen name="elevation_neu">0dp</dimen>
+
+</resources>

@@ -1,0 +1,97 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.neumorphic.launcher'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.neumorphic.launcher"
+        minSdk 26          // Android 8.0 (Oreo) — minimum target sesuai kebutuhan user
+        targetSdk 34       // Android 14 — kompatibel dengan Oppo A6 Pro (Android 15)
+        versionCode 1
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+
+        // Optimasi untuk Oppo A6 Pro — Optimize for Oppo A6 Pro
+        // Oppo A6 Pro: MediaTek Helio G99 (MT6789), arm64-v8a, 1080x2372 @ 480dpi
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a'
+        }
+
+        // Resource compression untuk APK lebih kecil — Locale filter only
+        // (density filtering tidak boleh di resourceConfigurations pada build tools 21+)
+        resourceConfigurations += ['en', 'id']
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    packaging {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+    // AndroidX Core libraries
+    implementation 'androidx.core:core-ktx:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.activity:activity-ktx:1.8.0'
+    implementation 'androidx.fragment:fragment-ktx:1.6.1'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
+
+    // Material Components — Material Design 3
+    implementation 'com.google.android.material:material:1.11.0'
+
+    // RecyclerView untuk grid aplikasi
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+
+    // ViewPager2 untuk multi-page home screen
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+
+    // ConstraintLayout & Flexbox untuk layout dinamis
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3'
+
+    // SharedPreferences / DataStore untuk pengaturan tema
+    implementation 'androidx.preference:preference-ktx:1.2.1'
+
+    // Testing
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

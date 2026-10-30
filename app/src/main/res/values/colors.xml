@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Warna utama Neumorphic (mode terang / light mode).
+        Neumorphism memerlukan background, light shadow, dan dark shadow
+        yang berasal dari warna background yang sama.
+    -->
+
+    <!-- Background utama (warna dasar seluruh UI) -->
+    <color name="background_neu">#FFE0E5EC</color>
+
+    <!-- Light shadow (untuk top-left convex) -->
+    <color name="shadow_light_neu">#FFFFFFFF</color>
+
+    <!-- Dark shadow (untuk bottom-right convex) -->
+    <color name="shadow_dark_neu">#FFA3B1C6</color>
+
+    <!-- Warna teks -->
+    <color name="text_primary_neu">#FF2D3047</color>
+    <color name="text_secondary_neu">#FF6C73A8</color>
+
+    <!-- Warna aksen (default: ungu) -->
+    <color name="accent_neu">#FF6C63FF</color>
+    <color name="accent_neu_pressed">#FF5A52D9</color>
+
+    <!-- Warna latar launcher icon -->
+    <color name="launcher_icon_bg">#FF6C63FF</color>
+
+    <!-- Status bar & nav bar -->
+    <color name="status_bar_neu">#FFE0E5EC</color>
+    <color name="nav_bar_neu">#FFE0E5EC</color>
+
+    <!-- Warna tambahan untuk divider -->
+    <color name="divider_neu">#33000000</color>
+
+</resources>

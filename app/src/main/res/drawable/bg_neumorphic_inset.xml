@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Background Neumorphic inset (tenggelam) — Sunken Neumorphic background.
+    Dark shadow di top-left, light shadow di bottom-right (kebalikan convex).
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Light shadow (bottom-right) — outer layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/shadow_light_neu" />
+            <corners android:radius="24dp" />
+        </shape>
+    </item>
+
+    <!-- Dark shadow offset (top-left) -->
+    <item android:left="1dp" android:top="1dp" android:right="0dp" android:bottom="0dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/shadow_dark_neu" />
+            <corners android:radius="24dp" />
+        </shape>
+    </item>
+
+    <!-- Main background (inset) -->
+    <item android:left="2dp" android:top="2dp" android:right="2dp" android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/background_neu" />
+            <corners android:radius="22dp" />
+        </shape>
+    </item>
+
+</layer-list>

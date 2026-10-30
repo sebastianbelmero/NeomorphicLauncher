@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Background Neumorphic convex (timbul) — Raised Neumorphic background.
+    Light shadow di top-left, dark shadow di bottom-right.
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Dark shadow (bottom-right) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/shadow_dark_neu" />
+            <corners android:radius="24dp" />
+        </shape>
+    </item>
+
+    <!-- Light shadow offset (top-left) -->
+    <item android:left="1dp" android:top="1dp" android:right="0dp" android:bottom="0dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/shadow_light_neu" />
+            <corners android:radius="24dp" />
+        </shape>
+    </item>
+
+    <!-- Main background (inset untuk efek convex) -->
+    <item android:left="1dp" android:top="1dp" android:right="1dp" android:bottom="1dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/background_neu" />
+            <corners android:radius="24dp" />
+        </shape>
+    </item>
+
+</layer-list>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layout item aplikasi di dock bawah.
+    App item layout for bottom dock.
+
+    Hanya ikon (tanpa label), dalam container lingkaran neumorphic.
+    Only icon (no label), inside neumorphic circular container.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="64dp"
+    android:layout_height="64dp"
+    android:layout_marginHorizontal="6dp"
+    android:background="@drawable/bg_neumorphic_circle"
+    android:clickable="true"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/dockAppIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:contentDescription="@null"
+        tools:src="@mipmap/ic_launcher" />
+
+</FrameLayout>

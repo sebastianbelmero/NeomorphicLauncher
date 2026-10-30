@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--
+        Base theme launcher — Light mode default.
+        Memakai NoActionBar karena launcher memiliki UI custom sendiri.
+    -->
+    <style name="Theme.NeumorphicLauncher" parent="Theme.Material3.Light.NoActionBar">
+        <item name="android:windowBackground">@color/background_neu</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <item name="colorPrimary">@color/accent_neu</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@color/accent_neu</item>
+    </style>
+
+    <!-- Tema Home Screen — Fullscreen immersive -->
+    <style name="Theme.NeumorphicLauncher.Home" parent="Theme.NeumorphicLauncher">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- Tema App Drawer -->
+    <style name="Theme.NeumorphicLauncher.Drawer" parent="Theme.NeumorphicLauncher">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+    <!-- Tema Settings -->
+    <style name="Theme.NeumorphicLauncher.Settings" parent="Theme.NeumorphicLauncher">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+    <!-- Style teks judul section -->
+    <style name="TextAppearance.SectionTitle" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/text_primary_neu</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Style teks body -->
+    <style name="TextAppearance.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/text_secondary_neu</item>
+    </style>
+
+</resources>

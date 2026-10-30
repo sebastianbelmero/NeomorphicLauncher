@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Fallback round launcher icon (untuk pre-API 26, meskipun minSdk=26).
+    Fallback round launcher icon using vector drawable.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:fillColor="#FF6C63FF"
+        android:pathData="M24,0 a24,24 0 1,0 0.001,0 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M24,12 L10,24 L14,24 L14,36 L20,36 L20,28 L28,28 L28,36 L34,36 L34,24 L38,24 Z" />
+</vector>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nama aplikasi & teks UI (Bahasa Indonesia) -->
+    <string name="app_name">Neumorphic Launcher</string>
+    <string name="settings_title">Pengaturan</string>
+
+    <!-- Search & hints -->
+    <string name="search_hint">Cari aplikasi…</string>
+    <string name="app_drawer">Daftar Aplikasi</string>
+    <string name="no_apps_found">Tidak ada aplikasi yang cocok</string>
+
+    <!-- Buttons -->
+    <string name="save">Simpan</string>
+    <string name="back">Kembali</string>
+    <string name="close">Tutup</string>
+
+    <!-- Settings -->
+    <string name="settings_theme_mode">Mode Tema</string>
+    <string name="theme_light">Terang</string>
+    <string name="theme_dark">Gelap</string>
+    <string name="theme_auto">Otomatis (mengikuti sistem)</string>
+
+    <string name="settings_accent_color">Warna Aksen</string>
+    <string name="settings_background_color">Warna Latar Belakang</string>
+    <string name="settings_background_color_hint">Pilih warna latar yang akan digunakan di seluruh launcher</string>
+
+    <string name="settings_corner_radius">Radius Sudut Kartu</string>
+    <string name="settings_shadow_intensity">Intensitas Bayangan</string>
+
+    <!-- Toast messages -->
+    <string name="toast_added_to_dock">ditambahkan ke dock</string>
+    <string name="toast_already_in_dock">sudah ada di dock</string>
+    <string name="toast_app_not_found">Aplikasi tidak ditemukan</string>
+    <string name="toast_cannot_open">Tidak dapat membuka</string>
+    <string name="toast_clock_app_not_found">Aplikasi jam tidak ditemukan</string>
+    <string name="toast_theme_saved">Tema disimpan. Restart launcher untuk melihat perubahan.</string>
+</resources>
